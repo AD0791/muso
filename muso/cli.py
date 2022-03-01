@@ -1,6 +1,14 @@
 from typer import (
     Typer,
+    Exit,
+    Option,
     echo
+) 
+from typing import Optional
+
+from muso import(
+  __app_name__, 
+  __version__  
 ) 
 
 
@@ -13,13 +21,13 @@ app = Typer()
 
 def _version_callback(value: bool) -> None:
     if value:
-        typer.echo(f"{__app_name__} v{__version__}")
-        raise typer.Exit()
+        echo(f"{__app_name__} v{__version__}")
+        raise Exit()
 
 
 @app.callback()
 def main(
-    version: Optional[bool] = typer.Option(
+    version: Optional[bool] = Option(
         None,
         "--version",
         "-v",
