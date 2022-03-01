@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "muso"
-version = "0.1.0"
+version = "0.2.0"
 description = "Muso CLI project"
 authors = ["AD0791 <alexdisla1991@gmail.com>"]
 
