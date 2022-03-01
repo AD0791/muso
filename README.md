@@ -1,6 +1,11 @@
 # Muso
-
 ---
 
-- direct_beneficiaries
-- indirect_beneficiaries
+
+## Listes Commands
+
+
+- get the version
+- direct_beneficiaries command
+- indirect_beneficiaries command
+- resume command
