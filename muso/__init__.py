@@ -1,18 +1,18 @@
 from requests import get
 from requests.auth import HTTPBasicAuth
 from pandas import DataFrame
-from cachetools import (
+""" from cachetools import (
     cached,
     TTLCache
-)
+) """
 
 from muso.settings import setting
 
-__version__ = '0.1.0'
+__version__ = '0.2.0'
 __app_name__ = "Muso"
 
 
-cache = TTLCache(maxsize=10000, ttl=86400)
+# cache = TTLCache(maxsize=10000, ttl=86400)
 
 _oauth = HTTPBasicAuth(setting.email_comcare,setting.password_comcare)
 
@@ -47,7 +47,7 @@ def form_ibd():
 
 
 
-__bd = DataFrame(list(
+_bd = DataFrame(list(
     map(
         lambda k: {
             "userID":k['metadata']['userID'],
@@ -61,11 +61,11 @@ __bd = DataFrame(list(
         ,form_bd()
     )
 ))
-__bd.drop_duplicates('case_id',inplace=True)
-__bd.reset_index(drop=True)
+_bd.drop_duplicates('case_id',inplace=True)
+_bd.reset_index(drop=True)
+__bd = _bd.head(1000)
 
-
-__ibd = DataFrame(list(
+_ibd = DataFrame(list(
     map(
         lambda k: {
             "userID": k['user_id'],
@@ -81,3 +81,4 @@ __ibd = DataFrame(list(
         ,form_ibd()
     )
 ))
+__ibd = _ibd.head(1000)
