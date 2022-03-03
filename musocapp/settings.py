@@ -21,7 +21,7 @@ class Setting(BaseSettings):
     class Config:
         env_prefix=""
         case_sensitive=False
-        env_file=".env"
+        env_file="./musocapp/muso.env"
         env_file_encoding="utf-8"
 
 

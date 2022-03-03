@@ -11,4 +11,9 @@
 - resume command
 - count for the different scenarios
 
+## Deployment
+
+- Local instance: muso
+
+
 > think for the caching options later
