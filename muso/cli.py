@@ -5,12 +5,12 @@ from typer import (
     echo
 ) 
 from typing import Optional
-from rich import box
 from rich.table import Table
 from rich.console import Console
-from rich.columns import Columns
-from rich.panel import Panel
-from muso.helper import table_helper
+from muso.helper import(
+    table_helper,
+    resume_helper
+) 
 from muso import(
   __app_name__, 
   __version__,
@@ -30,7 +30,13 @@ def bdirect():
 @app.command(short_help="Tableau des beneficaires indirect de MUSO")
 def bindirect():
     table = table_helper(__ibd, _table)
-    _console.print(_table)
+    _console.print(table)
+    
+    
+@app.command(short_help="Les tableaux des beneficiaires directs et indirects")
+def resume():
+    res = resume_helper(__bd, __ibd, _table)
+    _console.print(res)
 
 
 def _version_callback(value: bool) -> None:
@@ -51,5 +57,4 @@ def main(
     )
 ) -> None:
     return
-
 

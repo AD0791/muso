@@ -8,7 +8,7 @@ from pandas import DataFrame
 
 from muso.settings import setting
 
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 __app_name__ = "Muso"
 
 
@@ -63,7 +63,7 @@ _bd = DataFrame(list(
 ))
 _bd.drop_duplicates('case_id',inplace=True)
 _bd.reset_index(drop=True)
-__bd = _bd.head(1000)
+__bd = _bd.head(100)
 
 _ibd = DataFrame(list(
     map(
@@ -81,4 +81,4 @@ _ibd = DataFrame(list(
         ,form_ibd()
     )
 ))
-__ibd = _ibd.head(1000)
+__ibd = _ibd.head(100)
