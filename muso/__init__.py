@@ -8,7 +8,7 @@ from pandas import DataFrame
 
 from muso.settings import setting
 
-__version__ = '0.3.0'
+__version__ = '0.9.0'
 __app_name__ = "Muso"
 
 

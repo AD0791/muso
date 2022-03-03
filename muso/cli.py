@@ -9,13 +9,15 @@ from rich.table import Table
 from rich.console import Console
 from muso.helper import(
     table_helper,
-    resume_helper
+    resume_helper,
+    _version_callback,
+    count_helper
 ) 
 from muso import(
-  __app_name__, 
-  __version__,
   __bd,
-  __ibd 
+  __ibd,
+  _bd,
+  _ibd 
 )
 
 app = Typer()
@@ -37,12 +39,13 @@ def bindirect():
 def resume():
     res = resume_helper(__bd, __ibd, _table)
     _console.print(res)
-
-
-def _version_callback(value: bool) -> None:
-    if value:
-        echo(f"{__app_name__} v{__version__}")
-        raise Exit()
+    
+    
+@app.command(short_help="Tableau donnant le count des beneficiaires")
+def count():
+    count_tab = count_helper(_bd, _ibd, _table)
+    _console.print(count_tab)    
+    
 
 
 @app.callback()
