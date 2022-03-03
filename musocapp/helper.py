@@ -4,11 +4,11 @@ from rich.panel import Panel
 from pandas import DataFrame
 from typer import echo
 
-from musoapp import (
+from musocapp import (
     __app_name__,
     __version__
 )
-from musoapp.utils import df_to_table 
+from musocapp.utils import df_to_table 
 
 
 def _version_callback(value: bool) -> None:

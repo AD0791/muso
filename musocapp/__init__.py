@@ -6,10 +6,10 @@ from pandas import DataFrame
     TTLCache
 ) """
 
-from musoapp.settings import setting
+from musocapp.settings import setting
 
 __version__ = '1.0.0'
-__app_name__ = "musoapp"
+__app_name__ = "musocapp"
 
 
 # cache = TTLCache(maxsize=10000, ttl=86400)

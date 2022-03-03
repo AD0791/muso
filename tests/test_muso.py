@@ -1,6 +1,6 @@
 import pytest
-from musoapp import __version__, __app_name__
-from musoapp.cli import app
+from musocapp import __version__, __app_name__
+from musocapp.cli import app
 from typer.testing import CliRunner
 
 

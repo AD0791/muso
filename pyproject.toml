@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "musoapp"
+name = "musocapp"
 version = "1.0.0"
 description = "Muso CLI project"
 authors = ["AD0791 <alexdisla1991@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-musoapp = "musoapp.__main__:main"
+musocapp = "musocapp.__main__:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"

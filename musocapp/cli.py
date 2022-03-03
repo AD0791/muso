@@ -7,13 +7,13 @@ from typer import (
 from typing import Optional
 from rich.table import Table
 from rich.console import Console
-from musoapp.helper import(
+from musocapp.helper import(
     table_helper,
     resume_helper,
     _version_callback,
     count_helper
 ) 
-from musoapp import(
+from musocapp import(
   __bd,
   __ibd,
   _bd,
