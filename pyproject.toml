@@ -1,9 +1,12 @@
 [tool.poetry]
-name = "muso"
-version = "0.9.0"
+name = "musoapp"
+version = "1.0.0"
 description = "Muso CLI project"
 authors = ["AD0791 <alexdisla1991@gmail.com>"]
 readme = "README.md"
+
+[tool.poetry.scripts]
+musoapp = "musoapp.__main__:main"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -12,6 +15,7 @@ rich = {extras = ["all"], version = "^11.2.0"}
 pydantic = {extras = ["all"], version = "^1.9.0"}
 pandas = "^1.4.1"
 cachetools = "^5.0.0"
+requests = "^2.27.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

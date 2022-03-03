@@ -2,12 +2,13 @@ from rich import box
 from rich.columns import Columns
 from rich.panel import Panel
 from pandas import DataFrame
+from typer import echo
 
-from muso import (
+from musoapp import (
     __app_name__,
     __version__
 )
-from muso.utils import df_to_table 
+from musoapp.utils import df_to_table 
 
 
 def _version_callback(value: bool) -> None:
