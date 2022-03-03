@@ -3,6 +3,7 @@ name = "muso"
 version = "0.2.0"
 description = "Muso CLI project"
 authors = ["AD0791 <alexdisla1991@gmail.com>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
