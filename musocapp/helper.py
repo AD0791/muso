@@ -1,14 +1,17 @@
 from rich import box
 from rich.columns import Columns
 from rich.panel import Panel
+from rich.layout import Layout
 from pandas import DataFrame
 from typer import echo
+
 
 from musocapp import (
     __app_name__,
     __version__
 )
 from musocapp.utils import df_to_table 
+
 
 
 def _version_callback(value: bool) -> None:
@@ -54,8 +57,7 @@ def count_helper(bd,ibd,tab,index=False):
     return table
 
 def hiv_helper(df,tab,index=False):
-    table = df_to_table(df, tab,show_index=index)
+    table = df_to_table(df, tab,show_index=index)    
     table.row_styles = ["none", "dim"]
-    table.box = box.HEAVY 
+    table.box = box.HEAVY
     return table
-    

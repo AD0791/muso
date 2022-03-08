@@ -10,7 +10,7 @@ from sqlalchemy import create_engine
 
 from musocapp.settings import setting
 
-__version__ = '1.1.0'
+__version__ = '1.2.0'
 __app_name__ = "musocapp"
 
 
@@ -96,9 +96,13 @@ SELECT
 FROM
 	muso_household_2022 mh
 	LEFT JOIN auth_users au ON mh.created_by = au.id
-	group by au.username
+	group by au.username, mh.id_patient
 '''
 
-__muso_hiv = read_sql_query(_query,_engine,parse_dates=True)
+_muso_hiv = read_sql_query(_query,_engine,parse_dates=True)
 
 _engine.dispose()
+
+__hivmuso = _muso_hiv.groupby(['username','email']).count()
+__hivmuso.loc['Total']= __hivmuso.sum(numeric_only=True, axis=0)
+__hivmuso.reset_index(inplace=True)
