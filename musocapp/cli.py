@@ -19,7 +19,9 @@ from musocapp import(
   __ibd,
   _bd,
   _ibd,
-  __hivmuso
+  __hivmuso,
+  __app_name__,
+  __version__
 )
 
 app = Typer()
@@ -52,6 +54,15 @@ def count():
 def hiv_entry():
     hiv_tab = hiv_helper(__hivmuso, _table)
     _console.print(hiv_tab) 
+
+
+
+def _version_callback(value: bool) -> None:
+    if value:
+        echo(f"{__app_name__} v{__version__}")
+        raise Exit()    
+    
+
 
 @app.callback()
 def main(
