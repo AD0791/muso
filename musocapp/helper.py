@@ -51,6 +51,11 @@ def count_helper(bd,ibd,tab,index=False):
     table = df_to_table(df, tab,show_index=index)
     table.row_styles = ["none", "dim"]
     table.box = box.HEAVY 
-    
+    return table
+
+def hiv_helper(df,tab,index=False):
+    table = df_to_table(df, tab,show_index=index)
+    table.row_styles = ["none", "dim"]
+    table.box = box.HEAVY 
     return table
     

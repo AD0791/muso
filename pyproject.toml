@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "musocapp"
-version = "1.0.0"
+version = "1.1.0"
 description = "Muso CLI project"
 authors = ["AD0791 <alexdisla1991@gmail.com>"]
 readme = "README.md"
@@ -16,6 +16,8 @@ pydantic = {extras = ["all"], version = "^1.9.0"}
 pandas = "^1.4.1"
 cachetools = "^5.0.0"
 requests = "^2.27.1"
+PyMySQL = "^1.0.2"
+SQLAlchemy = "^1.4.32"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

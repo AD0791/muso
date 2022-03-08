@@ -11,13 +11,15 @@ from musocapp.helper import(
     table_helper,
     resume_helper,
     _version_callback,
-    count_helper
+    count_helper,
+    hiv_helper
 ) 
 from musocapp import(
   __bd,
   __ibd,
   _bd,
-  _ibd 
+  _ibd,
+  __muso_hiv
 )
 
 app = Typer()
@@ -46,7 +48,10 @@ def count():
     count_tab = count_helper(_bd, _ibd, _table)
     _console.print(count_tab)    
     
-
+@app.command(short_help="Tableau donnant le count des beneficiaires sur hiv")
+def hiv_entry():
+    hiv_tab = hiv_helper(__muso_hiv, _table)
+    _console.print(hiv_tab) 
 
 @app.callback()
 def main(

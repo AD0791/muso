@@ -10,6 +10,7 @@
 - indirect_beneficiaries command
 - resume command
 - count for the different scenarios
+- all hiv entry
 
 ## Deployment
 
